@@ -86,13 +86,14 @@ CSVReader and CSVWriter(get this file from this repository)
     fun insertDataRawFormat(query: SupportSQLiteQuery): Boolean? 
   ```
 #And Add this fun in your viewModel or In Repo and call it like I called  here
-/*if (count==2) {
-                        customerViewModel.pushCustomerData(columns, value)
-                    }*/
-``` suspend fun pushCustomerData(columns:StringBuilder,values:StringBuilder) = withContext(Dispatchers.IO){
+/*if (count==2) { customerViewModel.pushCustomerData(columns, value)}*/
+
+```
+suspend fun pushCustomerData(columns:StringBuilder,values:StringBuilder) = withContext(Dispatchers.IO){
         val query = SimpleSQLiteQuery(
             "INSERT INTO customer ($columns) values($values)",
             arrayOf()
         )
         customerDao.insertDataRawFormat(query)
-    }```
+    }
+ ```
