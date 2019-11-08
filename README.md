@@ -2,8 +2,7 @@
 Import and Export .csv file in Room database as a Table(Android-Kotlin)
 Add Two file in Your Android package
 CSVReader and CSVWriter(get this file from this repository)
-.
-.
+
 #Eport CSV file from your room database table
 ``` 
     private fun exportCSV(){
@@ -82,11 +81,14 @@ CSVReader and CSVWriter(get this file from this repository)
 ```    
 
 
-#first add this line into your Dao
+#first add this fun into your Dao
  ``` @RawQuery
     fun insertDataRawFormat(query: SupportSQLiteQuery): Boolean? 
   ```
-#Add this line in your viewModel or In Repo
+#And Add this fun in your viewModel or In Repo and call it like I called  here
+/*if (count==2) {
+                        customerViewModel.pushCustomerData(columns, value)
+                    }*/
 ``` suspend fun pushCustomerData(columns:StringBuilder,values:StringBuilder) = withContext(Dispatchers.IO){
         val query = SimpleSQLiteQuery(
             "INSERT INTO customer ($columns) values($values)",
