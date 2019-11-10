@@ -1,8 +1,7 @@
 # Import_Export_CSV_File-Android_Kotlin
 Import and Export .csv file in Room database as a Table(Android-Kotlin)
 
-Add Two file in Your Android package
-CSVReader and CSVWriter(get this file from this repository)
+Firstly, Add Two file in Your Android package  CSVReader and CSVWriter(get this file from this repository)
 
 #Eport CSV file from your room database table
 ``` 
@@ -42,7 +41,8 @@ CSVReader and CSVWriter(get this file from this repository)
     
   #Import CSV file from your storage path
 
- ``` private fun importCSV(){
+ ``` 
+ private fun importCSV(){
         val csvReader =
             CSVReader(FileReader("${getExternalStorageDirectory()}/CSV/$TABLE_NAME.csv"))/* path of local storage (it should be your csv file locatioin)*/
         var nextLine: Array<String> ? = null
